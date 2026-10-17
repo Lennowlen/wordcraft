@@ -1,0 +1,29 @@
+[package]
+name = "wordcraft-android"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+path = "src/lib.rs"
+
+[dependencies]
+wordcraft-doc = { workspace = true }
+wordcraft-ui-egui = { workspace = true }
+wordcraft-engine = { workspace = true }
+eframe = { workspace = true, default-features = false, features = ["default_fonts", "wgpu", "android-native-activity"] }
+egui = { workspace = true }
+android-activity = { version = "0.6", features = ["native-activity"] }
+log = { workspace = true }
+android_logger = "0.14"
+jni = "0.21"
+
+[package.metadata.android]
+package = "ai.storyteller.wordcraft"
+apk_name = "WordCraft"
+app_name = "WordCraft"
+label = "WordCraft"
+target_sdk_version = 34
+min_sdk_version = 26
+build_targets = ["aarch64-linux-android"]
