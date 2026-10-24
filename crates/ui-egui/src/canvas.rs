@@ -1009,7 +1009,11 @@ pub fn show(app: &mut WordApp, ui: &mut Ui) {
         .auto_shrink([false, false])
         // Bringing the caret into view glides there, or jumps with animation effects off.
         .animated(animate)
-        .scroll_source(egui::scroll_area::ScrollSource { mouse_wheel: false, ..Default::default() });
+        .scroll_source(egui::scroll_area::ScrollSource {
+            mouse_wheel: false,
+            drag: egui::scroll_area::DragScroll::Always,
+            ..Default::default()
+        });
     if app.session.view.read_mode {
         scroll_area = scroll_area.scroll_bar_visibility(egui::scroll_area::ScrollBarVisibility::AlwaysHidden);
     }

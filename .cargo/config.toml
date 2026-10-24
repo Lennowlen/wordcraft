@@ -1,2 +1,5 @@
 [alias]
-xtask = "run --package xtask --"
+xtask = "run -p xtask --"
+
+[target.aarch64-linux-android]
+linker = "C:/Users/ThinkPad/AppData/Local/Android/Sdk/ndk/27.1.12297006/toolchains/llvm/prebuilt/windows-x86_64/bin/aarch64-linux-android34-clang.cmd"
